@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>护城河不是为了防御 — 吴哥窟书稿</title>
+  <meta name="description" content="一本关于吴哥窟的书。护城河不是为了防御，它是为了让地基保持湿润，让一切还能继续站着。">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+<!-- 顶部进度条 -->
+<div id="progress-bar"></div>
+
+<!-- 右侧进度指示器 -->
+<div id="progress-indicator">
+  <div id="progress-line">
+    <div id="progress-fill"></div>
+  </div>
+  <div id="current-chapter"></div>
+</div>
+
+<!-- 顶部导航 -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-title" href="#hero">护城河不是为了防御</a>
+    <div class="nav-chapters">
+      <button class="nav-item" data-target="preface-section">序</button>
+      <button class="nav-item" data-target="chapter-0">序章</button>
+      <button class="nav-item" data-target="chapter-1">一</button>
+      <button class="nav-item" data-target="chapter-2">二</button>
+      <button class="nav-item" data-target="chapter-3">三</button>
+      <button class="nav-item" data-target="chapter-4">四</button>
+      <button class="nav-item" data-target="chapter-5">五</button>
+      <button class="nav-item" data-target="chapter-6">六</button>
+      <button class="nav-item" data-target="chapter-7">七</button>
+      <button class="nav-item" data-target="chapter-epilogue">尾</button>
+      <button class="nav-item" data-target="quotes">金句</button>
+      <button class="nav-item" data-target="gallery">画廊</button>
+      <button class="nav-item" data-target="timeline">时间线</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     英雄封面区
+     ============================================================ -->
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+
+  <!-- 吴哥五塔剪影（SVG） -->
+  <svg class="angkor-silhouette" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- 底座长廊 -->
+    <rect x="50" y="240" width="700" height="60" fill="#050403"/>
+    <!-- 外侧塔（左） -->
+    <rect x="80" y="200" width="55" height="100" fill="#050403"/>
+    <rect x="88" y="168" width="40" height="40" fill="#050403"/>
+    <polygon points="108,140 88,168 128,168" fill="#050403"/>
+    <!-- 外侧塔（右） -->
+    <rect x="665" y="200" width="55" height="100" fill="#050403"/>
+    <rect x="673" y="168" width="40" height="40" fill="#050403"/>
+    <polygon points="693,140 673,168 713,168" fill="#050403"/>
+    <!-- 内侧塔（左） -->
+    <rect x="200" y="165" width="75" height="135" fill="#050403"/>
+    <rect x="210" y="130" width="55" height="42" fill="#050403"/>
+    <polygon points="237,100 210,130 265,130" fill="#050403"/>
+    <!-- 内侧塔（右） -->
+    <rect x="525" y="165" width="75" height="135" fill="#050403"/>
+    <rect x="535" y="130" width="55" height="42" fill="#050403"/>
+    <polygon points="562,100 535,130 590,130" fill="#050403"/>
+    <!-- 中央主塔 -->
+    <rect x="330" y="100" width="140" height="200" fill="#050403"/>
+    <rect x="348" y="55" width="104" height="55" fill="#050403"/>
+    <rect x="366" y="20" width="68" height="42" fill="#050403"/>
+    <polygon points="400,0 366,20 434,20" fill="#050403"/>
+    <!-- 台阶结构 -->
+    <rect x="140" y="230" width="520" height="15" fill="#050403"/>
+    <rect x="110" y="244" width="580" height="12" fill="#050403"/>
+  </svg>
+
+  <div class="hero-content">
+    <p class="hero-pretitle">吴哥窟书稿 · 2026</p>
+    <h1 class="hero-title">护城河不是为了防御</h1>
+    <p class="hero-subtitle">吴哥窟，一个文明的地基与隐喻</p>
+    <p class="hero-author">重庆 → 金边 → 暹粒 · 二十一天</p>
+  </div>
+
+  <div class="hero-scroll">
+    <span>向下探索</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ============================================================
+     引言区
+     ============================================================ -->
+<section id="preface-section">
+  <div id="preface">
+    <div class="preface-quote fade-up">
+      <p id="preface-quote-text">护城河不是为了防御。
+它是为了让地基保持湿润，
+让一切还能继续站着。</p>
+    </div>
+    <p class="preface-attribution fade-up">—— 吴哥窟，2026年3月22日，西门，日出刚过</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================
+     序章
+     ============================================================ -->
+<section id="chapter-0" class="chapter-section">
+
+  <div class="chapter-hero fade-in">
+    <img class="chapter-hero-img" src="assets/images/angkor-wat-sunrise-crowd.jpg"
+         alt="吴哥窟日出与人群" loading="lazy">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-text">
+      <span class="chapter-number">序章</span>
+      <h2 class="chapter-title">护城河</h2>
+      <p class="chapter-tagline">190米宽，不是为了防御</p>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <p class="fade-up drop-cap">吴哥窟护城河宽190米。大多数人以为它是防御工事。错了。</p>
+    <p class="fade-up">高棉人把吴哥窟建在软沙和沼泽之上。那些千万吨的巨石，脚下踩着的是沙，而沙必须维持在精确的湿润度才能承载它们——过干，地基收缩下沉；过湿，结构失稳滑移。护城河存在的核心原因，是调节地下水位，让沙始终保持在那个精确的湿润状态。</p>
+    <p class="fade-up">旱季，护城河补充地下水。雨季，它吸收多余的水分。一旦护城河干涸，整个吴哥窟在极短的时间内坍塌。</p>
+
+    <div class="highlight-quote fade-up">
+      这个事实在我站在西门的时候才知道。太阳刚升起，光线穿过主塔，我在想：这条绕了一圈的水，它保护的不是城墙。它保护的是整个建筑得以存在的可能性。那条护城河，是一套动态平衡系统，不是屏障。
+    </div>
+
+    <div class="chapter-photo fade-up">
+      <img src="assets/images/angkor-temple-ruins.jpg" alt="吴哥窟遗址">
+      <div class="photo-caption">吴哥遗址群 · 12世纪 · 高棉帝国</div>
+    </div>
+
+    <p class="fade-up">后来我发现，护城河有很多种形式。不只是建在石头和沙子之间的那种。</p>
+    <p class="fade-up">一个人对另一个人保持距离，以为这是保护，其实是在调节彼此的湿度。一段记忆被小心封存，以为是回避，其实是在维持某种内部平衡，让它不至于干涸。一套认知框架，你以为它是你看世界的方式，其实它同时在调节你能够接收什么、感受什么、被什么震撼。</p>
+
+    <div class="highlight-quote fade-up">
+      护城河不是为了防御。它是为了让地基保持湿润，让一切还能继续站着。这本书是一次寻找护城河的旅行。
+    </div>
+
+    <p class="fade-up">出发之前，我在拉萨待了一段时间。布达拉宫前，我第一次认真想了「证道」这个词——不是宗教意义上的，是认识论层面的：一个人，怎么从「知道某件事」变成「理解某件事」？两者之间有一道沟，不是靠阅读能越过去的，只能靠真实的经验。</p>
+    <p class="fade-up">我选了柬埔寨。吴哥窟。不只是因为它美，也不只是因为它宏大。而是因为它是一个答案——一个帝国，一套宇宙观，一千年，最后变成了丛林里的石头堆。这中间发生了什么，为什么发生，留下了什么，遗失了什么，这套问题本身就值得一个月的时间。</p>
+    <p class="fade-up">后来发现，可以。而且对话比我预期的更深。</p>
+    <p class="fade-up">这本书按时间线走：金边到暹粒，暹粒到吴哥，三天遗址，然后是沉淀。但它想说的不只是旅行。护城河在前面。</p>
+  </div>
+</section>
+
+<div class="divider-ornament"><div class="ornament-diamond"></div></div>
+
+<!-- ============================================================
+     第一章
+     ============================================================ -->
+<section id="chapter-1" class="chapter-section">
+
+  <div class="chapter-hero fade-in">
+    <img class="chapter-hero-img" src="assets/images/phnom-penh-royal-palace.jpg"
+         alt="金边皇宫" loading="lazy">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-text">
+      <span class="chapter-number">第一章</span>
+      <h2 class="chapter-title">金边，被抢的那一天</h2>
+      <p class="chapter-tagline">进入一个地方最真实的方式</p>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <h3 class="section-heading fade-up">一、抵达</h3>
+    <p class="fade-up">从重庆出发，经昆明，飞金边。抵达的时候是傍晚，36度。机场外面的空气和我预期的一样——热，潮，有某种混合着柴油和青草的味道，是东南亚特有的那种。</p>
+    <p class="fade-up">金边的路宽，车多，摩托车以一种我觉得不可能避开但永远避开了的方式在车流里穿行。这座城市把所有的时态都塞在了同一条街上。第一天一切正常。第二天，手机被抢了。</p>
+
+    <h3 class="section-heading fade-up">二、被抢</h3>
+    <p class="fade-up">我从理发店出来，走路去皇宫方向。正在低头看导航的时候，背后来了一辆摩托车，嗖一下从旁边经过。手机被甩了出去，落在地上。等我回过神来，摩托车已经在前面惯性滑行了一段距离。后座的人回头看了我一眼。然后他们走了。</p>
+
+    <div class="highlight-quote fade-up">
+      这大概是最真实的进入方式。一个地方在你最脆弱的时刻如何对待你，才是它的真实底色——不是景区的底色，而是这个地方真实的日常逻辑的底色。
+    </div>
+
+    <div class="photo-pair fade-up">
+      <div class="chapter-photo">
+        <img src="assets/images/royal-palace-pigeons-crowd.jpg" alt="皇宫广场">
+        <div class="photo-caption">金边皇宫广场</div>
+      </div>
+      <div class="chapter-photo">
+        <img src="assets/images/s21-genocide-museum-portraits.jpg" alt="S21种族灭绝博物馆">
+        <div class="photo-caption">S21种族灭绝博物馆 · 红色高棉时期遗址</div>
+      </div>
+    </div>
+
+    <h3 class="section-heading fade-up">三、货币博物馆：被废除的信任</h3>
+    <p class="fade-up">货币博物馆里有一段让我停留了很久的展陈——关于红色高棉时期废除货币的那一段。</p>
+    <p class="fade-up">1975年，红色高棉夺取政权后，废除货币。金边中央银行被炸毁，货币被宣布为资产阶级的工具。货币是什么？是一套信任系统——废除货币，不只是废除了一种交换工具，是废除了那套信任的底层逻辑。整个社会的交换系统清零了。</p>
+    <p class="fade-up">有些东西一旦被废除，需要重建的不只是那个东西本身，而是它所依赖的底层社会基础。这比重建一栋建筑难得多。</p>
+
+    <h3 class="section-heading fade-up">四、被抢之后的夜晚</h3>
+    <p class="fade-up">被抢那天晚上，我坐在住的地方，想这件事的性质。不是愤怒，而是一种奇怪的清醒。</p>
+    <p class="fade-up">一个摩托车手，生活在一个收入极度不平等的城市里，用最简单的方式获取了他需要的东西。他不知道我是谁，也不需要知道。他只知道我手里有一个手机，那个手机值他可能几个月的收入。他做了一个对他来说合理的选择。</p>
+
+    <div class="highlight-quote fade-up">
+      一个行为，如果你只看行为本身，看到的是犯罪；如果你往下走一层，看到的是一个人在结构里做出的选择；如果再往下走，看到的是那个结构是怎么来的，为什么到今天还是这个样子。金边给我上的第一课，不是关于高棉文明，而是关于「理解」本身的层次。
+    </div>
+
+    <p class="fade-up">我就这样走进了柬埔寨。</p>
+  </div>
+</section>
+
+<div class="divider-ornament"><div class="ornament-diamond"></div></div>
+
+<!-- ============================================================
+     第二章
+     ============================================================ -->
+<section id="chapter-2" class="chapter-section">
+
+  <div class="chapter-hero fade-in">
+    <img class="chapter-hero-img" src="assets/images/siem-reap-cafe-interior.jpg"
+         alt="暹粒咖啡馆" loading="lazy">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-text">
+      <span class="chapter-number">第二章</span>
+      <h2 class="chapter-title">暹粒的准备时间</h2>
+      <p class="chapter-tagline">知道与理解之间的那道沟</p>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <h3 class="section-heading fade-up">一、一座慢悠悠的小城</h3>
+    <p class="fade-up">暹粒不是金边。金边是首都的逻辑——拥堵、噪音、权力感，那种大城市特有的「每个人都在赶」的气场。暹粒是另一种节奏：寺庙、咖啡馆、街边、tuk-tuk、僧人、游客、狗、树荫，全都混在一起，没有谁特别着急，阳光把一切晒得慢悠悠的。</p>
+    <p class="fade-up">我在这里住了将近两周。前九天在吴哥窟之前，三天在吴哥，之后的几天是吴哥结束之后的沉淀期。这本书里讲的大部分事情，都发生在这个慢悠悠的小城里。</p>
+
+    <div class="chapter-photo fade-up">
+      <img src="assets/images/monks-pigeons-siem-reap.jpg" alt="暹粒僧侣与鸽子">
+      <div class="photo-caption">暹粒街头 · 僧侣与鸽子</div>
+    </div>
+
+    <h3 class="section-heading fade-up">二、公益咖啡馆与第三部门</h3>
+    <p class="fade-up">来暹粒的第一天，我找了一家咖啡馆坐下来工作。进去之后才发现是公益咖啡馆——Footprint Cafes，2016年在暹粒开出第一家，核心理念是 People, Planet, Profit，把100%净利润以教育和创业资助的形式回馈本地社区。</p>
+    <p class="fade-up">服务员记得我的习惯——冰美式不要糖，第二次去，没说，他们已经帮我默认打包了。这让我觉得很舒服。不是因为它「贴心」，而是因为它在说：你是真实存在的，你的偏好被记住了。</p>
+
+    <div class="highlight-quote fade-up">
+      在政府无力触达、市场无利可图的地方，第三部门在填空。门槛低，我喜欢门槛低的好事。门槛低意味着可以持续。
+    </div>
+
+    <h3 class="section-heading fade-up">三、博物馆：知道与理解的差距</h3>
+    <p class="fade-up">去博物馆，是为了在进入吴哥遗址群之前建立一个认知框架。博物馆里有很多东西——吴哥时期的雕像、铭文、建筑模型、历史地图。但真正让我停下来的，不是某件文物，而是一个问题：知道一个地方，和理解一个地方，有什么区别？</p>
+    <p class="fade-up">我知道护城河围绕着吴哥窟，但我不理解为什么，直到两天后站在西门才明白它的真实功能。博物馆能给你「知道」，但不能给你「理解」。「理解」需要身体在场。</p>
+
+    <div class="highlight-quote fade-up">
+      认知的一种风险：知道得太多，有时候会替代而不是帮助感受。当你进入一个地方，已经带着一套完整的解释框架，你的系统在运转，但你的感官可能停止了。
+    </div>
+
+    <div class="chapter-photo fade-up">
+      <img src="assets/images/monks-walking-stone-walls.jpg" alt="僧侣走过石墙">
+      <div class="photo-caption">暹粒 · 僧侣走过古老石墙</div>
+    </div>
+
+    <h3 class="section-heading fade-up">四、摩托车</h3>
+    <p class="fade-up">去吴哥窟的三天，我租了一辆摩托车。原价13美金一天，三天，最后砍到24美金。骑摩托是这次旅行里最对的决定之一。吴哥遗址群面积超过400平方公里，骑摩托是真正意义上的「自由行」——你可以在任何地方停下来，可以在某个路口看到一棵树然后绕进去看看后面是什么。</p>
+    <p class="fade-up">摩托车本身就是一种护城河——不是把你和外界隔开，而是给你一种刚好能保持接触又不失去自主的距离。加满油，第二天早上六点出发。</p>
+  </div>
+</section>
+
+<div class="divider-ornament"><div class="ornament-diamond"></div></div>
+
+<!-- ============================================================
+     第三章
+     ============================================================ -->
+<section id="chapter-3" class="chapter-section">
+
+  <div class="chapter-hero fade-in">
+    <img class="chapter-hero-img" src="assets/images/bayon-smiling-face.jpg"
+         alt="巴戎寺高棉的微笑" loading="lazy">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-text">
+      <span class="chapter-number">第三章 · Day 1</span>
+      <h2 class="chapter-title">为别人而建</h2>
+      <p class="chapter-tagline">2026-03-21 · 大圈 · 约185km</p>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <h3 class="section-heading fade-up">一、216张面孔</h3>
+    <p class="fade-up">第一个景点是巴戎寺（Bayon）。巴戎寺是吴哥城（Angkor Thom）的中心国寺，阇耶跋摩七世所建，12世纪末。主体结构是54座塔林，每座塔的四面都有一张巨大的石刻面孔，微笑，眼睛半合，神情处于某种介于清醒和入定之间的状态。加起来约216张面孔，环绕着你，从所有方向同时看着你。</p>
+    <p class="fade-up">站在里面的感受很难描述。不是「被监视」，也不是「被关注」，更接近于「被包含」——你在这些面孔构成的空间里，那些面孔不是在注视你，而是在说某种与你无关但将你包含在内的东西。</p>
+
+    <div class="highlight-quote fade-up">
+      苏利耶跋摩二世把自己刻进了石头，阇耶跋摩七世把众生建进了石头，自己消失进慈悲里。两个人都死了，两个人都以某种方式存活在石头里。但留下的质地，完全不同。
+    </div>
+
+    <div class="chapter-photo fade-up">
+      <img src="assets/images/preah-khan-temple-columns.jpg" alt="圣剑寺长廊">
+      <div class="photo-caption">圣剑寺 · Preah Khan · 献给父亲</div>
+    </div>
+
+    <h3 class="section-heading fade-up">二、圣剑寺：父亲的寺庙</h3>
+    <p class="fade-up">圣剑寺（Preah Khan）是阇耶跋摩七世为父亲所建，1191年，原名「胜利圣城」。我在里面超时了四十分钟。这在计划里是一个小时的景点，但圣剑寺是一个迷宫。回廊向四个方向延伸，路口的选择不是左或右，而是上、下、左、右和正前方，而且每个方向都有道理，每个方向都有东西值得看，你永远不确定走这条还是那条是不是会错过什么。</p>
+    <p class="fade-up">圣剑寺鼎盛时期有将近十万人在这里生活和工作——寺庙、寺院、大学、城市，四者合一。内墙曾覆盖约1500吨青铜饰板，现在的墙面上还能看到固定铜板用的方形卡口，那些方格排列得整齐，像是一个已经移除了内容的表格，框架还在，内容被后来的人取走了。</p>
+
+    <div class="photo-pair fade-up">
+      <div class="chapter-photo">
+        <img src="assets/images/preah-khan-headless-statues.jpg" alt="圣剑寺无首神像">
+        <div class="photo-caption">圣剑寺 · 无首神像群</div>
+      </div>
+      <div class="chapter-photo">
+        <img src="assets/images/monks-sitting-trees.jpg" alt="僧侣坐在树下">
+        <div class="photo-caption">吴哥 · 树荫下的僧侣</div>
+      </div>
+    </div>
+
+    <h3 class="section-heading fade-up">三、雨，在东梅奔</h3>
+    <p class="fade-up">东梅奔是中午之后到的。东南亚旱季的这种突然降雨是一种非常剧烈的感官体验——五分钟之前还是34度的干热，五分钟之后变成了倾盆大雨，温度瞬间掉了七八度。我躲在廊下，把手机放着，坐着看雨。没有信号，没有内容，只有雨和那些石头。</p>
+
+    <div class="highlight-quote fade-up">
+      「没有信号也是一件很幸福的事情。」它强迫你把注意力放在其他地方，不让你消耗在信息流里，让你回遇到自己和这个世界。
+    </div>
+
+    <h3 class="section-heading fade-up">四、今天学到的事情</h3>
+    <p class="fade-up">今天建立了一个认知框架：两个国王的对比。苏利耶跋摩二世——建吴哥窟，朝西，陵庙，为自己，成为毗湿奴的化身，把自己刻进永恒。阇耶跋摩七世——建圣剑寺（父亲）、塔布茏（母亲）、涅槃宫（众生的医院）、巴戎寺（众生的守护）。他为别人而建，自己消失进那些献出去的建筑里。</p>
+    <p class="fade-up">两种方式，在一千年后的今天，都让人记得。只是被记得的方式不一样。</p>
+  </div>
+</section>
+
+<div class="divider-ornament"><div class="ornament-diamond"></div></div>
+
+<!-- ============================================================
+     第四章（核心：日出 + 护城河洞见）
+     ============================================================ -->
+<section id="chapter-4" class="chapter-section">
+
+  <div class="chapter-hero fade-in">
+    <img class="chapter-hero-img" src="assets/images/angkor-wat-sunrise-crowd.jpg"
+         alt="吴哥窟日出" loading="lazy">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-text">
+      <span class="chapter-number">第四章 · Day 2</span>
+      <h2 class="chapter-title">护城河不是为了防御</h2>
+      <p class="chapter-tagline">2026-03-22 · 吴哥窟日出 · 7个站点</p>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <h3 class="section-heading fade-up">四点半起床</h3>
+    <p class="fade-up">闹钟设的四点半，但其实三点多就醒了。不是睡不着，是那种身体知道今天有什么重要的事情、提前把你唤起来的清醒。五点骑摩托出门。暹粒凌晨的街道是那种非常干净的空旷，路灯把路面打出橙黄色的光圈，风是凉的，在旱季里难得。</p>
+    <p class="fade-up">进遗址群之前，西门外已经停了一长排摩托车和tuk-tuk。黑暗里，几十个人无声地排着队，没人说话，手机屏幕的蓝光在人群里亮着。</p>
+
+    <h3 class="section-heading fade-up">日出</h3>
+    <p class="fade-up">光是慢慢来的。先是东方天际出现一条细细的橙色线，然后这条线变宽，变成橙红，把整片天空的颜色从黑推成深蓝、推成灰蓝、推成淡金。五座主塔的剪影，从黑色开始，慢慢有了轮廓，然后有了质感。</p>
+    <p class="fade-up">太阳真正出来的那一刻，光线穿过主塔背后，像是液体一样从塔尖漫出来，把那个几何形状边缘烧出一圈金色。周围站了几十个人，没有人说话。这种集体的安静不是被要求的，是自发的，是大家同时感受到「此刻不需要说话」的那种共识。</p>
+
+    <div class="highlight-quote fade-up">
+      这不只是好看。好看是表层。它背后是一套精密到跨越一千年依然有效的工程精度，和一种把宗教仪式、政治宣示、天文知识三者叠合进同一个建筑的思维密度。这种东西，你必须站在那里，才能感受到它的重量。
+    </div>
+
+    <div class="chapter-photo fade-up">
+      <img src="assets/images/jayavarman-vii-meditating-statue.jpg" alt="阇耶跋摩七世冥想像">
+      <div class="photo-caption">阇耶跋摩七世冥想像 · 国家博物馆藏</div>
+    </div>
+
+    <h3 class="section-heading fade-up">护城河</h3>
+    <p class="fade-up">看完日出，绕到西门边上，走到护城河的栏杆处，往水里看。护城河宽190米。站在边上，对岸是模糊的，水面非常宽，如果不是因为两端有路可以走，你很难相信这条水有终点。</p>
+    <p class="fade-up">我一直以为护城河是防御工事——宽度让敌人难以泅渡，给守方争取反应时间。那天有人给我看了另一个事实：吴哥窟建在沙地和沼泽之上。沙作为承重介质，必须维持在精确的湿润范围内。护城河的核心功能，是调节地下水位。旱季，它补充地下水；雨季，它吸收多余的雨水。一旦护城河干涸，整个吴哥窟在极短的时间内坍塌。</p>
+
+    <div class="highlight-quote fade-up">
+      那190米的宽度，不是为了让敌人游不过去，是为了让沙子保持湿润，是为了让千万吨的巨石还能继续站着。形式和功能合为一体。护城河同时是「宇宙之海」的宗教隐喻，也是整座建筑存活的生命线。你移除任何一个层面，它都只是一半的设计。
+    </div>
+
+    <h3 class="section-heading fade-up">塔布茏：张力的平衡</h3>
+    <p class="fade-up">塔布茏（Ta Prohm）的名声来自那些树。巨大的木棉树，根系从石墙的缝隙里钻出来，横跨整面墙，把石头抱住，或者撑开，或者压垮。你站在那里，说不清楚是树在毁灭这座寺庙，还是这座寺庙借助树在继续存在。</p>
+
+    <div class="photo-pair fade-up">
+      <div class="chapter-photo">
+        <img src="assets/images/ta-prohm-giant-tree-roots.jpg" alt="塔布茏巨树根系">
+        <div class="photo-caption">塔布茏 · 木棉树根与石墙的共生</div>
+      </div>
+      <div class="chapter-photo">
+        <img src="assets/images/ta-prohm-tomb-raider-tree.jpg" alt="塔布茏经典树景">
+        <div class="photo-caption">塔布茏 · 最著名的树根景观</div>
+      </div>
+    </div>
+
+    <p class="fade-up">法国考古团队进入吴哥之后，面对塔布茏做了一个和其他地方不同的决定：不做大规模还原，而是保持树根与石头共存的状态，把这个状态本身作为遗产来保护。这是一种保护哲学的选择，而不只是技术的选择。</p>
+
+    <div class="chapter-photo fade-up">
+      <img src="assets/images/ta-prohm-tree-root-wall.jpg" alt="塔布茏树根墙">
+      <div class="photo-caption">塔布茏 · 树根与石墙的五百年纠缠</div>
+    </div>
+
+    <h3 class="section-heading fade-up">巴方寺：全世界最大的三维拼图</h3>
+    <p class="fade-up">20世纪初，法国考古团队进入吴哥，对已经大面积塌陷的巴方寺做了一个冒险的决定：把整座寺庙彻底拆解，对每一块石头编号、标记位置、记录数据，计划按照原始结构完整复原。然后，内战来了。所有档案部分销毁，部分散失。等局势稳定，法国团队重返的时候，面对的是：石头还在，但说明书没了。</p>
+
+    <div class="highlight-quote fade-up">
+      石头活了一千年，说明书活了不到一百年。信息比物质更脆弱，这个直觉在吴哥反复被验证：碑铭里的文字，比建筑本身损坏得更快；保护方案的档案，比被保护的对象先失去。
+    </div>
+
+    <h3 class="section-heading fade-up">护城河的另一层</h3>
+    <p class="fade-up">那天晚上，在青旅的床上，想了护城河很久。不只是工程层面的，是隐喻层面的。任何你以为是屏障的东西，往往是某种更复杂的平衡机制。</p>
+
+    <div class="highlight-quote fade-up">
+      我在做AI产品这件事上，也有护城河。写作是护城河，阅读是护城河，让自己真实地进入一个地方、被那个地方改变，是护城河。如果这些东西干涸了，上面的工作依然在运转，但地基在收缩，某种东西在慢慢下沉。这趟旅行，也许是在给护城河补水。不是逃避，不是充电，是在调节某种内部平衡，让那个地基保持它应该有的湿润，让上面的一切还能继续站着。
+    </div>
+  </div>
+</section>
+
+<div class="divider-ornament"><div class="ornament-diamond"></div></div>
+
+<!-- ============================================================
+     第五章
+     ============================================================ -->
+<section id="chapter-5" class="chapter-section">
+
+  <div class="chapter-hero fade-in">
+    <img class="chapter-hero-img" src="assets/images/banteay-srei-pink-towers.jpg"
+         alt="班蒂斯蕾粉红塔" loading="lazy">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-text">
+      <span class="chapter-number">第五章 · Day 3</span>
+      <h2 class="chapter-title">路上那个小男孩</h2>
+      <p class="chapter-tagline">2026-03-23 · 外圈 · 约185km · 38-39°C</p>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <h3 class="section-heading fade-up">一、最远的一天</h3>
+    <p class="fade-up">第三天是外圈，是三日里路程最远、离暹粒最远、游客最少的一天。路线：班蒂斯蕾 → 崩密列 → 罗洛士群 → Little Angels工坊 → 返程。这一天结束的时候，头非常痛——严重缺水，高温，在户外太阳下暴晒了九个小时。但这是三天里感触最深的一天。</p>
+
+    <h3 class="section-heading fade-up">二、班蒂斯蕾：工匠意志的极限</h3>
+    <p class="fade-up">班蒂斯蕾第一眼是一种错位感——它很小。和前两天看的巴戎寺、圣剑寺、吴哥窟相比，核心区域可能半个小时就能走完。但这是一种误判，前两天看的是宏大，班蒂斯蕾的维度是密度。</p>
+    <p class="fade-up">粉红砂岩。普通砂岩是黄褐色的，班蒂斯蕾用的是一种带有粉红色调的高密度砂岩，比普通砂岩更硬，雕刻难度更高，但成品更细腻，颜色在阳光下呈现出接近玫瑰金的色调。这在整个吴哥体系里是唯一的。</p>
+
+    <div class="photo-pair fade-up">
+      <div class="chapter-photo">
+        <img src="assets/images/banteay-srei-pink-towers.jpg" alt="班蒂斯蕾粉红塔">
+        <div class="photo-caption">班蒂斯蕾 · 粉红砂岩主塔群</div>
+      </div>
+      <div class="chapter-photo">
+        <img src="assets/images/banteay-srei-detailed-carvings.jpg" alt="班蒂斯蕾浮雕细节">
+        <div class="photo-caption">班蒂斯蕾 · 门楣浮雕细节</div>
+      </div>
+    </div>
+
+    <div class="highlight-quote fade-up">
+      班蒂斯蕾的建造者不是国王，是一位婆罗门学者 Yajnavaraha，他是国王的导师。精神力量可以凌驾于政治权力之上。在某个时代，这是真的。
+    </div>
+
+    <h3 class="section-heading fade-up">三、崩密列：被吞噬的感觉</h3>
+    <p class="fade-up">崩密列是真正的废墟。几乎没有修复干预，只有木栈道穿越，其余的一切都是原始的混沌——巨石堆、丛林、没有边界的塌陷区域。你在里面的感受是「被吞噬」。高处的木栈道上，俯瞰四周：巨石堆和丛林没有边界，人在里面非常渺小。人类伟大的建筑，在自然面前不堪一击。这不是悲剧，而是一种真实。</p>
+
+    <div class="photo-pair fade-up">
+      <div class="chapter-photo">
+        <img src="assets/images/beng-mealea-green-ruins-columns.jpg" alt="崩密列绿色废墟">
+        <div class="photo-caption">崩密列 · 丛林吞噬的石柱</div>
+      </div>
+      <div class="chapter-photo">
+        <img src="assets/images/beng-mealea-overgrown-temple.jpg" alt="崩密列丛林寺庙">
+        <div class="photo-caption">崩密列 · 热带植物侵占的神殿</div>
+      </div>
+    </div>
+
+    <h3 class="section-heading fade-up">四、路上那个小男孩</h3>
+    <p class="fade-up">骑摩托离开崩密列，穿越周边的村庄。铁皮屋在39度的午后像烤箱。居住材料是薄木板、竹片、干棕榈叶，还有废弃铁皮、塑料布，拼凑在一起。</p>
+    <p class="fade-up">然后我看到了那个小男孩。路过一家人，院子里有几个孩子。有一个非常小的男孩，光着身子，在泥坑里玩耍。我减速了。没有停下。</p>
+
+    <div class="highlight-quote fade-up">
+      不是不想靠近，是怕自己的靠近变成一种「观看」——把别人的日常变成自己的旅行体验，把别人的贫困变成自己的感受素材。那个小男孩不需要被观察，他只是在玩耍，在做一件对一个小孩子来说完全正常的事情：在泥巴里玩，因为泥巴是凉的，泥巴是有趣的，泥巴不会拒绝你。
+    </div>
+
+    <p class="fade-up">我继续骑走了。那个画面就这样定格在记忆里，没有结尾。</p>
+
+    <div class="chapter-photo fade-up">
+      <img src="assets/images/children-playing-ruins.jpg" alt="废墟旁玩耍的孩子">
+      <div class="photo-caption">废墟旁 · 孩子们的另一种世界</div>
+    </div>
+
+    <h3 class="section-heading fade-up">五、Little Angels：理想主义者</h3>
+    <p class="fade-up">返程路上，路边发现了 Little Angels 孤儿院与高棉艺术中心。Rathana 是一位皮影雕刻家，他发现柬埔寨传统的皮影艺术在战后几乎失传，于是在2002年左右建立了这个中心，教当地贫困家庭的孩子和孤儿学习一技之长。他把这些孩子叫做「小天使」。</p>
+
+    <div class="chapter-photo fade-up">
+      <img src="assets/images/little-angels-art-carving.jpg" alt="Little Angels手工艺">
+      <div class="photo-caption">Little Angels 工坊 · 孩子们亲手雕刻的皮影</div>
+    </div>
+
+    <div class="highlight-quote fade-up">
+      走了一天的废墟，骑了一天的路，看了太多关于文明、贫困、遗忘、崩塌的现场——然后在路边遇到一间小小的工坊，有人在认真地把手艺传给下一代，不管世界怎么样。这不是悲情的，是有力量的。
+    </div>
+
+    <h3 class="section-heading fade-up">六、返程大日落</h3>
+    <p class="fade-up">骑车返回暹粒，路上遇到了非常大的日落。不是比粒寺那种「错过了」的日落，是骑摩托时，整个天空突然橙红，太阳在地平线上画了一道很宽的颜色带，然后慢慢沉下去。我没有停车，没有举手机，只是骑着摩托看。三天吴哥的收尾仪式。</p>
+    <p class="fade-up">三天，大约500公里，跨越了一千年。我还不知道这三天给了我什么。但那个橙红色的日落里，有什么东西沉进去了，还没有浮上来，可能过很久才会浮上来。但它在了。这就够了。</p>
+  </div>
+</section>
+
+<div class="divider-ornament"><div class="ornament-diamond"></div></div>
+
+<!-- ============================================================
+     第六章
+     ============================================================ -->
+<section id="chapter-6" class="chapter-section">
+
+  <div class="chapter-hero fade-in">
+    <img class="chapter-hero-img" src="assets/images/cambodia-rural-village-life.jpg"
+         alt="柬埔寨乡村生活" loading="lazy">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-text">
+      <span class="chapter-number">第六章</span>
+      <h2 class="chapter-title">守着黄金的贫困</h2>
+      <p class="chapter-tagline">2026-03-24 至 03-28 · 暹粒 · 沉淀周</p>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <h3 class="section-heading fade-up">一、一个守着世界遗址的国家</h3>
+    <p class="fade-up">吴哥三天结束的那个晚上，我把摩托车还了，走回青旅，洗了澡，躺下。头还在疼。但脑子并没有安静。</p>
+    <p class="fade-up">其中一个问题，从第一天就一直跟着我：一个守着世界上最伟大遗址群之一的国家，为什么人民还是这么穷？2025年，柬埔寨人均GDP约1900美元，全球排名在140名左右，是最不发达国家之一。吴哥窟每年吸引将近两百万游客，是柬埔寨最重要的外汇收入来源之一。这张世界名片，背面写的是什么？</p>
+
+    <h3 class="section-heading fade-up">二、结构性贫困的四个层次</h3>
+    <p class="fade-up"><strong>第一层：红色高棉的清零。</strong>不只是死亡人数。四年里，整个社会的知识传承断了。红色高棉特别针对「知识分子」——医生、教师、工程师、僧侣。那种清零，不是清零了钱，是清零了知道怎么做事的人。重建一栋建筑，你只需要材料和时间。重建一代知道怎么教书的老师，你需要先有人教老师怎么教书。这个递归，需要的时间不是年，是代。</p>
+    <p class="fade-up"><strong>第二层：传统住屋智慧的失落。</strong>高棉传统高脚屋是一种对当地气候极度适应的建筑形式。问题是，这套智慧的物质基础消失了——好木料因为过度砍伐价格飙升，传统的建屋技艺也因为没有使用场合，逐渐失传。一种在这块土地上工作了几百年的居住方案，因为经济原因被迫放弃。</p>
+    <p class="fade-up"><strong>第三层：城镇化浪潮里的代价。</strong>旅游收入大部分流向了国际酒店集团、本地权贵经营的旅游公司。住在暹粒郊区的人，他们能感受到的变化，可能是地租涨了，生活成本高了，但收入没有跟上。城镇化把他们卷进来，但没有让他们分享红利。</p>
+    <p class="fade-up"><strong>第四层：财富的向上固化。</strong>柬埔寨的经济结构，有一个很清晰的特征：财富极度集中在少数政治权贵和商业精英手里，向下的流动渠道非常窄。四层叠压下来，就是你在路边看到的那些东西。</p>
+
+    <div class="highlight-quote fade-up">
+      吴哥窟是柬埔寨的名片，而名片这个东西，是给外人看的。背面写着什么，外人不需要知道，持卡人自己知道。一张世界名片，是先让名片受益，还是先让签名者受益？
+    </div>
+
+    <div class="chapter-photo fade-up">
+      <img src="assets/images/people-praying-shrine.jpg" alt="信众朝拜">
+      <div class="photo-caption">信众在小神龛前朝拜 · 日常信仰</div>
+    </div>
+
+    <h3 class="section-heading fade-up">三、第三部门：在裂缝里工作的人</h3>
+    <p class="fade-up">在政府无力触达、市场无利可图的地方，NGO 在填空。Common Grounds Cafe的答案是：把咖啡馆变成一个再分配机制。你买一杯咖啡，我把利润存起来，拿去做职业培训，培训出来的年轻人去了五星级酒店工作，从此有了稳定收入。这个链条，政府没有做，企业没有动机做，是第三部门在做。</p>
+
+    <div class="highlight-quote fade-up">
+      我坐在那里，买的是「每一分消费都投入慈善」的咖啡。这是我能做的最小单位的参与。不是因为它够用，而是因为它是真实的，不是象征性的，是一个具体的行为，发生在一个具体的地方，到达某个具体的人。门槛低。我喜欢门槛低的好事，因为门槛低意味着可以持续。
+    </div>
+
+    <p class="fade-up">那些日子，有时候很艰难，但大多数时候，好像也就这样。我不知道这是接受，还是适应，还是一种更深的智慧——对这件事的理解，我还没完成。</p>
+  </div>
+</section>
+
+<div class="divider-ornament"><div class="ornament-diamond"></div></div>
+
+<!-- ============================================================
+     第七章
+     ============================================================ -->
+<section id="chapter-7" class="chapter-section">
+
+  <div class="chapter-hero fade-in">
+    <img class="chapter-hero-img" src="assets/images/siem-reap-coworking-space-view.jpg"
+         alt="暹粒共享空间视角" loading="lazy">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-text">
+      <span class="chapter-number">第七章</span>
+      <h2 class="chapter-title">祛魅之后</h2>
+      <p class="chapter-tagline">当你懂了很多，你还能被震撼吗？</p>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <h3 class="section-heading fade-up">一、「知道」与「感受」的关系</h3>
+    <p class="fade-up">有一段时间，社交媒体上对一个叫「全嘻嘻」的旅行博主产生了争议：当你对一件事情懂得太多，你还能真实地感受它吗？认知是放大感受的工具，还是有时候会替代感受？</p>
+    <p class="fade-up">这个问题，我在吴哥三天里也遇到了。去吴哥之前，我读了蒋勋的《吴哥之美》，读了历史资料，建立了认知框架。进去之后，有一个奇怪的时刻：站在巴戎寺里，216张面孔从各个方向看着我，我的第一个反应不是感受，是知识在运作——「这是阇耶跋摩七世，这是大乘佛教……」</p>
+
+    <h3 class="section-heading fade-up">二、祛魅与赋魅</h3>
+    <p class="fade-up">「祛魅」（Disenchantment）这个词是韦伯用来描述现代性的：科学和理性把世界的神秘性剥除了，我们理解了更多，但那种原始的、不需要解释就能感受到的「震撼」越来越难体验到。你知道彩虹是光的折射，彩虹还美吗？答案当然是美，但美的方式变了，从「神迹」变成了「精妙」。</p>
+
+    <div class="highlight-quote fade-up">
+      这是祛魅之后的赋魅：理解之后，你被打动的层次，更深。但这需要一个条件：你要能在理解之后，再次开放自己，让感受进来。知识是工具，但当它变成了反射层，把每一个感受都接住、分类、处理，不让任何东西真正进来，那个时候，知识就从工具变成了壁垒。
+    </div>
+
+    <h3 class="section-heading fade-up">三、马尔克斯的冰块</h3>
+    <p class="fade-up">马尔克斯在《百年孤独》的开头写了一块冰：第一次接触冰的人，把冰叫做「无数的小针」，因为那种寒冷是字面意义上的感觉，是手触碰到冰面时皮肤的真实感受，不是「低温固体」，是「无数的小针」。马尔克斯为什么能写出这个细节？因为这个感受是真实传到他身上的。文字里的温度，从哪里来？</p>
+
+    <div class="highlight-quote fade-up">
+      它来自摩擦。写作者必须先和那个体验真正发生碰撞，这个碰撞可能是痛的，可能是困惑的，可能是改变了什么的——然后那个「改变过你的东西」，才能通过文字传递出去。如果写作者没有经历那个碰撞，写出来的是信息，是描述，是到位的语言，但没有温度。
+    </div>
+
+    <h3 class="section-heading fade-up">四、廉价Token的时代</h3>
+    <p class="fade-up">现在是2026年，AI写作工具已经非常普及。大量的「旅行内容」——流畅的语言，准确的信息，合适的结构。有的是人写的，有的是AI写的。AI生成的文字，跳过了那个摩擦。它直接从大量的人类文字里提炼出「关于冰的描述应该是什么样的」，然后输出一个符合期望的句子。那个句子可能很好，可能语法正确，可能形象生动，但里面没有残留下任何碰撞的痕迹。每次阅读AI写的旅行文章，我都有种吃预制菜的感觉。</p>
+
+    <h3 class="section-heading fade-up">五、可信中介</h3>
+    <p class="fade-up">AI把内容生产的边际成本推向接近于零。这件事有一个非常确定的长期后果：内容会越来越多，但可信内容的稀缺性会越来越高。「可信」的对面不是「不准确」，而是「没有被消化过」。可信中介：一个人，消化过某个经验，然后把那个消化结果传递给你。AI目前无法提供这种可信性，不是因为它不聪明，而是因为它没有一个真实的意识系统，没有经历过真实的碰撞，没有被任何事情真正改变过。</p>
+
+    <h3 class="section-heading fade-up">六、震撼感的来源</h3>
+    <p class="fade-up">在吴哥窟之前，我的假设是：震撼感依赖于无知。吴哥之后，我的答案变了。两种震撼都是真实的。带着无知的震撼，和带着理解的震撼，是两种不同质地的体验，但都是真的。带着理解的震撼更难得——因为它需要你先经历祛魅的过程，然后你还能放下那个解释，再次开放自己，让「彩虹好美」这件事本身打动你。</p>
+
+    <div class="highlight-quote fade-up">
+      那道保护层，我把它叫做一种「知识的护城河」。知识是工具，但当它变成了反射层，你要做的，不是抛弃知识，而是把护城河从壁垒变回平衡系统。让知识流动，让感受流动，两者在你体内共存，互相补充，而不是互相替代。
+    </div>
+  </div>
+</section>
+
+<div class="divider-ornament"><div class="ornament-diamond"></div></div>
+
+<!-- ============================================================
+     尾章
+     ============================================================ -->
+<section id="chapter-epilogue" class="chapter-section">
+
+  <div class="chapter-hero fade-in">
+    <img class="chapter-hero-img" src="assets/images/siem-reap-sunset-city.jpg"
+         alt="暹粒日落城市" loading="lazy">
+    <div class="chapter-hero-overlay"></div>
+    <div class="chapter-hero-text">
+      <span class="chapter-number">尾章</span>
+      <h2 class="chapter-title">种子阶段</h2>
+      <p class="chapter-tagline">2026-03-27 深夜 · 暹粒河边</p>
+    </div>
+  </div>
+
+  <div class="chapter-body">
+    <h3 class="section-heading fade-up">一、河边，22:45</h3>
+    <p class="fade-up">暹粒有一条河。它叫暹粒河，不宽，在城区那段流得很平。我是22:45到的。三天吴哥已经结束了几天，反思周也快结束了，明天的行程是去老挝。不是大场面，就是坐下来，往河里看。</p>
+    <p class="fade-up">河这边，是一条步行道，有人遛狗，有人坐着，有小孩跑来跑去。那种安静不是死寂，是活着的安静——有声音，有动静，但都是生活的那种摩擦声，不是表演，不是刻意制造的。</p>
+
+    <h3 class="section-heading fade-up">二、关于死亡</h3>
+    <p class="fade-up">在暹粒的这几天，我想过几次死亡的问题。不是沉重意义上的那种，而是认识论层面的：死亡对理解生命有什么帮助？吴哥窟给这个问题提供了一个非常有力的视觉注解。那些石头在一千年里看过多少代人？苏利耶跋摩二世死了，阇耶跋摩七世死了，一千年过去，石头还在。</p>
+    <p class="fade-up">我站在那些石头前的时候，有一个很清晰的感受：渺小，但不是那种让人沮丧的渺小，而是让人安静的渺小。这是一个非常有用的比例尺。当你每天在处理的事情让你觉得它无比重要，无比巨大，大到压住了你整个视野，你可以用那个比例尺量一量。不是为了让事情变得不重要，而是为了让你能在那个正确的比例里，看清楚它实际上是什么大小。</p>
+
+    <h3 class="section-heading fade-up">三、护城河的最终答案</h3>
+    <p class="fade-up">这本书从护城河开始。在这本书的旅程走完之后，我的答案更清晰了。</p>
+    <p class="fade-up">一个人的护城河，不是把自己和外界隔开的那个东西。隔绝是屏障的功能，不是护城河的功能。护城河的功能，是维持地基的条件，让上面的一切还能继续站着。</p>
+
+    <div class="highlight-quote fade-up">
+      旅行是护城河，写作是护城河，阅读是护城河，让自己经历真实摩擦的所有事情都是护城河——它们不是装饰，不是逃避，是维持内部地基的平衡系统。一旦这些东西干涸，上面的一切开始下沉。
+    </div>
+
+    <div class="chapter-photo fade-up">
+      <img src="assets/images/siem-reap-night-market-sunset.jpg" alt="暹粒夜市日落">
+      <div class="photo-caption">暹粒夜市 · 离开前的最后一个傍晚</div>
+    </div>
+
+    <h3 class="section-heading fade-up">四、吴哥给我留下了什么</h3>
+    <p class="fade-up"><strong>一套比例尺。</strong>时间的、文明的、系统的。当我觉得某件事无比重要，我现在有了一套「用吴哥来量」的能力，不是把事情变小，而是把事情放在一个真实的大小里。</p>
+    <p class="fade-up"><strong>一个关于系统的直觉。</strong>护城河不是为了防御，是最生动的那个。任何你以为是屏障的东西，往往是某种更复杂的平衡机制。这个直觉，会在我下次遇到某个「看起来像屏障」的东西时，提醒我先绕一圈，看清楚它在做什么，再决定要不要拆掉它。</p>
+    <p class="fade-up"><strong>那个小男孩。</strong>他会在我某个类似的时刻出现——某次我减速了但没有停下来，某次我在观看和介入之间站着——他会出现，提醒我想清楚那一刻的选择是什么。</p>
+    <p class="fade-up"><strong>一个关于「为别人而建」的问题。</strong>阇耶跋摩七世为父亲建了圣剑寺，为母亲建了塔布茏，为众生建了巴戎寺。他消失进了那些献出去的建筑里。我在问自己：我在建什么，建给谁的，那个建好之后的归属是什么？这个问题没有答案，但它已经是一个我会继续带着的问题。</p>
+
+    <h3 class="section-heading fade-up">五、种子</h3>
+    <p class="fade-up">种子这个比喻，来自一个很简单的观察：吴哥窟之后，我有很多「知道了」，但不确定它们最终会长成什么。</p>
+    <p class="fade-up">一粒种子在地里，你不知道它会不会发芽，不知道它会长多高，不知道它的根系会延伸到哪里，不知道它什么时候会开花。但它在地里，这件事是确定的。</p>
+    <p class="fade-up">吴哥窟已经在我的认知地图里了。现在是种子阶段，还没发芽。这没关系。种子不需要着急。</p>
+
+    <h3 class="section-heading fade-up">六、出发</h3>
+    <p class="fade-up">22:45到河边，不知道坐了多久，对岸桥上的摩托车还在一辆接一辆地过。河水很黑，路灯倒映在里面，有风，水面轻轻动了一下，倒映的灯也跟着动了一下。</p>
+    <p class="fade-up">我在那里想：吴哥窟的护城河，今晚也在。一千年后的今天，它还在做同样的事情：旱季补充地下水，雨季吸收多余的水分，让那个软沙和沼泽上的地基保持湿润，让千万吨的巨石还能站着，让那些面孔还能对着天空微笑。它不知道游客的存在。它不在乎历史教科书怎么写它。它只是在做它一直在做的那件事。</p>
+
+    <div class="highlight-quote fade-up">
+      护城河不是为了防御。它是为了让一切还能继续站着。
+    </div>
+
+    <p class="fade-up" style="text-align: center; color: var(--color-muted); font-style: italic; margin-top: 3rem;">明天去老挝。护城河在后面，种子在前面。出发。</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     关键金句卡片墙
+     ============================================================ -->
+<section id="quotes">
+  <div class="quotes-header">
+    <span class="section-label">KEY QUOTES</span>
+    <h2 class="section-title fade-up">留下的金句</h2>
+  </div>
+
+  <div class="quotes-grid">
+
+    <div class="quote-card fade-up">
+      <div class="quote-card-mark">&ldquo;</div>
+      <p class="quote-card-text">护城河不是为了防御。它是为了让地基保持湿润，让一切还能继续站着。</p>
+      <p class="quote-card-source">— 序章 · 西门 · 日出刚过</p>
+    </div>
+
+    <div class="quote-card fade-up">
+      <div class="quote-card-mark">&ldquo;</div>
+      <p class="quote-card-text">苏利耶跋摩二世把自己刻进了石头，阇耶跋摩七世把众生建进了石头，自己消失进慈悲里。</p>
+      <p class="quote-card-source">— 第三章 · 巴戎寺</p>
+    </div>
+
+    <div class="quote-card fade-up">
+      <div class="quote-card-mark">&ldquo;</div>
+      <p class="quote-card-text">这不只是好看。好看是表层。它背后是一套精密到跨越一千年依然有效的工程精度。</p>
+      <p class="quote-card-source">— 第四章 · 吴哥窟日出</p>
+    </div>
+
+    <div class="quote-card fade-up">
+      <div class="quote-card-mark">&ldquo;</div>
+      <p class="quote-card-text">石头活了一千年，说明书活了不到一百年。信息比物质更脆弱。</p>
+      <p class="quote-card-source">— 第四章 · 巴方寺三维拼图</p>
+    </div>
+
+    <div class="quote-card fade-up">
+      <div class="quote-card-mark">&ldquo;</div>
+      <p class="quote-card-text">说不清楚是树在毁灭这座寺庙，还是这座寺庙借助树在继续存在。</p>
+      <p class="quote-card-source">— 第四章 · 塔布茏</p>
+    </div>
+
+    <div class="quote-card fade-up">
+      <div class="quote-card-mark">&ldquo;</div>
+      <p class="quote-card-text">如果我停下来，我是在把他变成旅行见闻里的素材，一个「我在柬埔寨见过的贫穷」的证明。</p>
+      <p class="quote-card-source">— 第五章 · 路上那个小男孩</p>
+    </div>
+
+    <div class="quote-card fade-up">
+      <div class="quote-card-mark">&ldquo;</div>
+      <p class="quote-card-text">马尔克斯为什么能写出冰是「无数的小针」？因为这个感受是真实传到他身上的。文字里的温度，来自摩擦。</p>
+      <p class="quote-card-source">— 第七章 · 祛魅之后</p>
+    </div>
+
+    <div class="quote-card fade-up">
+      <div class="quote-card-mark">&ldquo;</div>
+      <p class="quote-card-text">你会发现美好的东西不用刻意，刻意的东西不会美好，这就是 surprise。</p>
+      <p class="quote-card-source">— 第二章 · 暹粒的准备时间</p>
+    </div>
+
+    <div class="quote-card fade-up">
+      <div class="quote-card-mark">&ldquo;</div>
+      <p class="quote-card-text">这趟旅行，是在给护城河补水。不是逃避，不是充电，是在调节某种内部平衡，让那个地基保持它应该有的湿润，让上面的一切还能继续站着。</p>
+      <p class="quote-card-source">— 第四章 · 护城河的另一层</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     照片画廊
+     ============================================================ -->
+<section id="gallery">
+  <div class="quotes-header">
+    <span class="section-label">PHOTO GALLERY</span>
+    <h2 class="section-title fade-up">吴哥，一帧一帧</h2>
+  </div>
+
+  <div class="gallery-tabs fade-up">
+    <button class="gallery-tab active" data-filter="all">全部</button>
+    <button class="gallery-tab" data-filter="angkor">吴哥本体</button>
+    <button class="gallery-tab" data-filter="taprohm">塔布茏</button>
+    <button class="gallery-tab" data-filter="outer">班蒂·崩密</button>
+    <button class="gallery-tab" data-filter="monks">僧侣与人</button>
+    <button class="gallery-tab" data-filter="city">暹粒城市</button>
+    <button class="gallery-tab" data-filter="phnom">金边</button>
+  </div>
+
+  <div class="gallery-grid">
+
+    <div class="gallery-item" data-group="angkor">
+      <img src="assets/images/angkor-wat-sunrise-crowd.jpg" alt="吴哥窟日出与人群" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">吴哥窟日出 · 3月22日黎明</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="angkor">
+      <img src="assets/images/angkor-temple-ruins.jpg" alt="吴哥遗址" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">吴哥遗址群</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="angkor">
+      <img src="assets/images/bayon-smiling-face.jpg" alt="巴戎寺高棉的微笑" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">巴戎寺 · 高棉的微笑</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="angkor">
+      <img src="assets/images/jayavarman-vii-meditating-statue.jpg" alt="阇耶跋摩七世冥想像" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">阇耶跋摩七世冥想像</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="angkor">
+      <img src="assets/images/preah-khan-temple-columns.jpg" alt="圣剑寺长廊" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">圣剑寺 · 献给父亲</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="angkor">
+      <img src="assets/images/preah-khan-headless-statues.jpg" alt="圣剑寺无首神像" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">圣剑寺 · 被取走的头颅</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="angkor">
+      <img src="assets/images/angkor-stone-debris.jpg" alt="吴哥石材废墟" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">吴哥 · 散落的砂岩</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="taprohm">
+      <img src="assets/images/ta-prohm-giant-tree-roots.jpg" alt="塔布茏巨树根系" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">塔布茏 · 木棉树的怀抱</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="taprohm">
+      <img src="assets/images/ta-prohm-massive-root.jpg" alt="塔布茏巨大根系" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">塔布茏 · 盘根错节</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="taprohm">
+      <img src="assets/images/ta-prohm-tomb-raider-tree.jpg" alt="塔布茏经典树景" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">塔布茏 · 最著名的树</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="taprohm">
+      <img src="assets/images/ta-prohm-tree-root-wall.jpg" alt="塔布茏树根墙" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">塔布茏 · 五百年的纠缠</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="taprohm">
+      <img src="assets/images/ta-prohm-rubble-interior.jpg" alt="塔布茏内部废墟" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">塔布茏 · 坍塌的内殿</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="taprohm">
+      <img src="assets/images/ta-prohm-temple-entrance.jpg" alt="塔布茏入口" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">塔布茏 · 进入的门</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="outer">
+      <img src="assets/images/banteay-srei-pink-towers.jpg" alt="班蒂斯蕾粉红塔" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">班蒂斯蕾 · 玫瑰金砂岩</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="outer">
+      <img src="assets/images/banteay-srei-detailed-carvings.jpg" alt="班蒂斯蕾浮雕" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">班蒂斯蕾 · 工匠的极限</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="outer">
+      <img src="assets/images/beng-mealea-green-ruins-columns.jpg" alt="崩密列绿色废墟" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">崩密列 · 被吞噬</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="outer">
+      <img src="assets/images/beng-mealea-mossy-ruins.jpg" alt="崩密列苔藓废墟" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">崩密列 · 苔藓与石头</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="outer">
+      <img src="assets/images/beng-mealea-overgrown-temple.jpg" alt="崩密列丛林寺庙" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">崩密列 · 神庙逃亡</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="outer">
+      <img src="assets/images/beng-mealea-rubble-photographer.jpg" alt="崩密列摄影师" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">崩密列 · 人在废墟中的渺小</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="outer">
+      <img src="assets/images/beng-mealea-tree-root-over-wall.jpg" alt="崩密列树根越墙" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">崩密列 · 根越石墙</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="outer">
+      <img src="assets/images/beng-mealea-wild-roots-rubble.jpg" alt="崩密列野生根系" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">崩密列 · 野生状态</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="outer">
+      <img src="assets/images/little-angels-art-carving.jpg" alt="Little Angels手工艺" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">Little Angels · 孤儿院皮雕工坊</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="outer">
+      <img src="assets/images/children-playing-ruins.jpg" alt="废墟旁的孩子" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">废墟旁 · 孩子们的日常</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="monks">
+      <img src="assets/images/monks-angkor-thom-bridge.jpg" alt="吴哥城桥上的僧侣" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">吴哥城 · 桥上的僧侣</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="monks">
+      <img src="assets/images/monks-walking-stone-walls.jpg" alt="僧侣走过石墙" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">僧侣 · 走过一千年的石头</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="monks">
+      <img src="assets/images/monks-pigeons-siem-reap.jpg" alt="暹粒僧侣与鸽子" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">暹粒 · 僧侣与鸽子</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="monks">
+      <img src="assets/images/monks-sitting-trees.jpg" alt="僧侣树荫下" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">树荫下的僧侣</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="monks">
+      <img src="assets/images/buddha-statue-bodhi-tree.jpg" alt="菩提树下佛像" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">菩提树下的佛陀</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="monks">
+      <img src="assets/images/people-praying-shrine.jpg" alt="朝拜神龛" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">日常信仰 · 神龛前的朝拜</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="monks">
+      <img src="assets/images/national-museum-cambodia-statue.jpg" alt="国家博物馆神像" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">国家博物馆 · 高棉神像</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="city">
+      <img src="assets/images/siem-reap-cafe-interior.jpg" alt="暹粒咖啡馆" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">暹粒 · 公益咖啡馆</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="city">
+      <img src="assets/images/siem-reap-coworking-space-view.jpg" alt="暹粒共享空间" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">暹粒 · 窗外的城市</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="city">
+      <img src="assets/images/siem-reap-sunset-city.jpg" alt="暹粒日落城市" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">暹粒 · 日落时分的城市</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="city">
+      <img src="assets/images/siem-reap-night-market-sunset.jpg" alt="暹粒夜市日落" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">暹粒夜市 · 最后的傍晚</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="city">
+      <img src="assets/images/cambodia-rural-village-life.jpg" alt="柬埔寨乡村" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">柬埔寨乡村 · 日常生活</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="phnom">
+      <img src="assets/images/phnom-penh-royal-palace.jpg" alt="金边皇宫" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">金边皇宫 · 金顶</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="phnom">
+      <img src="assets/images/royal-palace-pigeons-crowd.jpg" alt="皇宫广场鸽子" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">金边皇宫广场</p></div>
+    </div>
+
+    <div class="gallery-item" data-group="phnom">
+      <img src="assets/images/s21-genocide-museum-portraits.jpg" alt="S21博物馆肖像" loading="lazy">
+      <div class="gallery-item-overlay"><p class="gallery-item-caption">S21 · 那些面孔</p></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="图片预览">
+  <button id="lightbox-close" aria-label="关闭">&times;</button>
+  <img id="lightbox-img" src="" alt="">
+  <p id="lightbox-caption"></p>
+</div>
+
+<!-- ============================================================
+     行程时间线
+     ============================================================ -->
+<section id="timeline">
+  <div class="quotes-header">
+    <span class="section-label">TIMELINE</span>
+    <h2 class="section-title fade-up">21天行程轨迹</h2>
+    <p style="color: var(--color-muted); font-size: 0.85rem; margin-top: 0.8rem; font-family: var(--font-heading);">重庆 → 昆明 → 金边 → 暹粒 → 吴哥 → 老挝 · 8824公里</p>
+  </div>
+
+  <div class="timeline-inner">
+    <div class="timeline-axis"></div>
+
+    <div class="timeline-item fade-up">
+      <div class="timeline-date">3月11日</div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-title">出发</div>
+        <div class="timeline-desc">重庆 → 昆明 → 金边。机场外面的空气：热，潮，有某种混合着柴油和青草的味道。</div>
+      </div>
+    </div>
+
+    <div class="timeline-item fade-up">
+      <div class="timeline-date">3月13日</div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-title">金边 · 手机被抢</div>
+        <div class="timeline-desc">从理发店出来，摩托车嗖一下，手机被甩出去。屏幕裂了一个角。这大概是最真实的进入方式。</div>
+      </div>
+    </div>
+
+    <div class="timeline-item fade-up">
+      <div class="timeline-date">3月13-15日</div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-title">金边探索</div>
+        <div class="timeline-desc">S21种族灭绝博物馆。货币博物馆。皇宫。城市里的割裂感。</div>
+      </div>
+    </div>
+
+    <div class="timeline-item fade-up">
+      <div class="timeline-date">3月16日</div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-title">抵达暹粒</div>
+        <div class="timeline-desc">Wat Bo寺。公益咖啡馆。换了一家青旅——有命名感的那种。</div>
+      </div>
+    </div>
+
+    <div class="timeline-item fade-up">
+      <div class="timeline-date">3月17-20日</div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-title">暹粒准备期</div>
+        <div class="timeline-desc">吴哥国家博物馆。读完《吴哥之美》。租了摩托车。加满油。</div>
+      </div>
+    </div>
+
+    <div class="timeline-item fade-up">
+      <div class="timeline-date">3月21日</div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-title">大圈 Day 1 · 约185km</div>
+        <div class="timeline-desc">巴戎寺的216张面孔。圣剑寺的迷宫。东梅奔大雨。比粒寺错过的日落。</div>
+      </div>
+    </div>
+
+    <div class="timeline-item fade-up">
+      <div class="timeline-date">3月22日</div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-title">小圈 Day 2 · 日出 · 洞见</div>
+        <div class="timeline-desc">四点半起床。护城河不是为了防御。塔布茏的树根。巴方寺的三维拼图。这是种子落下的那一天。</div>
+      </div>
+    </div>
+
+    <div class="timeline-item fade-up">
+      <div class="timeline-date">3月23日</div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-title">外圈 Day 3 · 约185km · 39°C</div>
+        <div class="timeline-desc">班蒂斯蕾的粉红砂岩。崩密列的被吞噬感。路上那个小男孩。Little Angels工坊。返程大日落。</div>
+      </div>
+    </div>
+
+    <div class="timeline-item fade-up">
+      <div class="timeline-date">3月24-28日</div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-title">暹粒沉淀周</div>
+        <div class="timeline-desc">Common Grounds Cafe。结构性贫困的四个层次。祛魅之后的赋魅。马尔克斯的冰块。</div>
+      </div>
+    </div>
+
+    <div class="timeline-item fade-up">
+      <div class="timeline-date">3月27日深夜</div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-title">暹粒河边 · 22:45</div>
+        <div class="timeline-desc">护城河在后面，种子在前面。明天去老挝。出发。</div>
+      </div>
+    </div>
+
+    <div class="timeline-item fade-up">
+      <div class="timeline-date">3月30日</div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-title">离开暹粒</div>
+        <div class="timeline-desc">把磨破了的鞋留在青旅门口。一本读完的书。一袋柬埔寨瑞尔。轻装出发。</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     关于此书
+     ============================================================ -->
+<section id="about">
+  <div class="quotes-header">
+    <span class="section-label">ABOUT THE BOOK</span>
+    <h2 class="section-title fade-up">关于这本书</h2>
+  </div>
+
+  <div class="about-inner">
+    <p class="fade-up">这是一本关于吴哥窟的书，但它想说的不只是旅行。</p>
+    <p class="fade-up">2026年3月，我从重庆出发，经昆明飞到金边，然后去了暹粒，骑摩托车用三天时间走遍了吴哥遗址群——大圈、小圈、外圈，约500公里，跨越了一千年的建筑史。</p>
+    <p class="fade-up">这本书按时间线走：金边到暹粒，暹粒到吴哥，三天遗址，然后是沉淀周。但它的核心，是那条190米宽的护城河——那个在我站在西门、太阳刚升起的时候，才真正理解了的事实：护城河不是为了防御，是为了让地基保持湿润，让千万吨的巨石还能继续站着。</p>
+    <p class="fade-up">我做AI，做产品，每天和系统架构打交道。我想知道，一个一千年前的古老文明，用石头建出来的东西，能不能和我每天处理的那些问题有任何对话。后来发现，可以。而且对话比我预期的更深。</p>
+    <p class="fade-up" style="font-style: italic; color: var(--color-muted); margin-top: 2rem;">这本书是一个容器，装着那些真实发生的碰撞的残留物。有些东西会传递，有些不会，取决于你和这些内容之间会不会也发生一次小小的碰撞。</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     水纹分隔
+     ============================================================ -->
+<div class="water-divider">
+  <canvas></canvas>
+</div>
+
+<!-- ============================================================
+     页脚
+     ============================================================ -->
+<footer>
+  <div class="footer-ornament">
+    <div class="footer-ornament-line"></div>
+    <div class="footer-ornament-diamond"></div>
+    <div class="footer-ornament-diamond"></div>
+    <div class="footer-ornament-diamond"></div>
+    <div class="footer-ornament-line"></div>
+  </div>
+
+  <p class="footer-title">护城河不是为了防御</p>
+  <p class="footer-subtitle">吴哥窟，一个文明的地基与隐喻 · 2026</p>
+
+  <div class="footer-ornament">
+    <div class="footer-ornament-line"></div>
+    <div class="footer-ornament-diamond"></div>
+    <div class="footer-ornament-line"></div>
+  </div>
+
+  <p class="footer-copy">重庆 → 金边 → 暹粒 · 吴哥遗址群 · 21天 · 8824公里</p>
+  <p class="footer-copy" style="margin-top: 0.5rem; opacity: 0.5;">© 2026 保留所有权利</p>
+</footer>
+
+<script src="scripts/main.js"></script>
+</body>
+</html>
