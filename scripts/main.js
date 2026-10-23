@@ -28,7 +28,6 @@
     ctx.globalAlpha = alpha;
     const baseY = H * 0.88;
     const cx = W / 2;
-    const scale = Math.min(W, H) * 0.0012;
 
     function drawTower(x, bottomY, w, h, hasCap) {
       // 塔身
@@ -74,13 +73,13 @@
     // 底座平台
     ctx.fillRect(cx - W * 0.28, baseY - H * 0.06, W * 0.56, H * 0.06);
     // 外侧两塔
-    drawTower(cx - spacing * 1.9, baseY, outerW * 160 * scale / scale, outerH, true);
-    drawTower(cx + spacing * 1.9, baseY, outerW * 160 * scale / scale, outerH, true);
+    drawTower(cx - spacing * 1.9, baseY, outerW, outerH, true);
+    drawTower(cx + spacing * 1.9, baseY, outerW, outerH, true);
     // 内侧两塔
-    drawTower(cx - spacing * 0.9, baseY, sideW * 160 * scale / scale, sideH, true);
-    drawTower(cx + spacing * 0.9, baseY, sideW * 160 * scale / scale, sideH, true);
+    drawTower(cx - spacing * 0.9, baseY, sideW, sideH, true);
+    drawTower(cx + spacing * 0.9, baseY, sideW, sideH, true);
     // 中央主塔
-    drawTower(cx, baseY, mainW * 130 * scale / scale, mainH, true);
+    drawTower(cx, baseY, mainW, mainH, true);
 
     ctx.restore();
   }
